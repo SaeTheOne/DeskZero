@@ -20,7 +20,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
 
       - name: Setup Rust
         uses: dtolnay/rust-toolchain@stable
@@ -51,13 +51,13 @@ jobs:
           Compress-Archive -Path "src-tauri/target/release/deskzero.exe","src-tauri/target/release/portable.mode" -DestinationPath DeskZero-Portable.zip
 
       - name: Upload Portable Package
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: DeskZero-Portable
           path: DeskZero-Portable.zip
 
       - name: Upload Inno Setup Installer
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: DeskZero-Installer
           path: src-tauri/target/release/bundle/inno/*.exe
