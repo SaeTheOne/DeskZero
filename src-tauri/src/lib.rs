@@ -1,3 +1,4 @@
+mod backup_timer;
 mod clipboard;
 mod commands;
 mod context_menu;
@@ -487,6 +488,9 @@ pub fn run() {
                 }
             }
 
+            // 启动自动备份定时器
+            crate::backup_timer::start_backup_timer(app.handle().clone());
+
             // 启动时清理旧版 Windows 服务（如果存在）
             crate::commands::system::cleanup_old_service();
 
@@ -644,6 +648,13 @@ pub fn run() {
             commands::desktop::get_desktop_layout,
             commands::desktop::save_desktop_layout,
             commands::desktop::sync_windows_layout,
+            commands::backup::create_backup,
+            commands::backup::delete_backup,
+            commands::backup::get_backup_data,
+            commands::backup::get_backup_settings,
+            commands::backup::list_backups,
+            commands::backup::restore_backup,
+            commands::backup::save_backup_settings,
             commands::file::open_file,
             commands::file::rename_file,
             commands::file::delete_file,
