@@ -638,6 +638,7 @@ export function FolderContainer({ container }: ContainerProps) {
 						className="fixed inset-0 z-[99] settings-backdrop"
 						onPointerDown={(e) => e.stopPropagation()}
 						onClick={(e) => e.stopPropagation()}
+						onContextMenu={(e) => { e.preventDefault(); e.stopPropagation(); }}
 					>
 						<motion.div
 							initial={{ opacity: 0, scale: 0.95 }}

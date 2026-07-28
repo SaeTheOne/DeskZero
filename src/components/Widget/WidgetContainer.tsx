@@ -364,6 +364,7 @@ export function WidgetContainer({ container }: WidgetContainerProps) {
             className="fixed inset-0 z-[99] settings-backdrop"
             onMouseDown={(e) => e.stopPropagation()}
             onClick={(e) => e.stopPropagation()}
+            onContextMenu={(e) => { e.preventDefault(); e.stopPropagation(); }}
           >
             <motion.div
               className="fixed z-[100] pointer-events-auto"
