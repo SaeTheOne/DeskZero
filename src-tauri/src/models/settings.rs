@@ -1,8 +1,6 @@
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 
-use super::backup::BackupSettings;
-
 #[derive(Debug, Clone, PartialEq)]
 pub enum Theme {
     Light,
@@ -222,8 +220,6 @@ pub struct Settings {
     pub parallax_intensity: u32,
     #[serde(default)]
     pub language: String,
-    #[serde(default)]
-    pub backup_settings: Option<BackupSettings>,
     /// 性能模式：全屏应用时自动暂停桌面特效
     #[serde(default)]
     pub performance_mode_enabled: bool,
@@ -273,7 +269,6 @@ impl Default for Settings {
             parallax_enabled: false,
             parallax_intensity: 2,
             language: "zh".to_string(),
-            backup_settings: None,
             performance_mode_enabled: true,
             fullscreen_detection_mode: FullscreenDetectionMode::FullscreenAndMaximized,
             font_family: String::new(),

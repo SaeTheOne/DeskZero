@@ -1,4 +1,3 @@
-pub mod backup_store;
 pub mod calendar_store;
 pub mod container_store;
 pub mod countdown_store;
@@ -15,7 +14,5 @@ pub fn init() -> Result<(), String> {
     Ok(())
 }
 
-#[cfg(test)]
-mod backup_store_test;
 #[cfg(test)]
 mod container_store_test;

@@ -1,4 +1,3 @@
-pub mod backup;
 pub mod calendar;
 pub mod container;
 pub mod countdown;
@@ -9,7 +8,6 @@ pub mod settings;
 pub mod todo;
 pub mod weather;
 
-pub use backup::*;
 pub use calendar::*;
 pub use container::*;
 pub use countdown::*;
