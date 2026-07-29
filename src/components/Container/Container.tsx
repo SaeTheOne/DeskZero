@@ -647,8 +647,7 @@ function NormalContainer({ container }: ContainerProps) {
 				createPortal(
 					<div
 						className="fixed inset-0 z-[99] settings-backdrop"
-						onPointerDown={(e) => e.stopPropagation()}
-						onClick={(e) => e.stopPropagation()}
+						onPointerDown={(e) => { if (e.target === e.currentTarget) setIsSettingsOpen(false); }}
 						onContextMenu={(e) => { e.preventDefault(); e.stopPropagation(); }}
 					>
 						<motion.div
